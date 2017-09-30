@@ -12,7 +12,7 @@ namespace Uebung2
         {
             test(1, 2);
             test(1, 2, 3);
-            Console.Read();
+            //Console.Read();
 
             StringList sl = new StringList();
             // Int-Property (setzt die Grösse der Liste)
@@ -22,10 +22,12 @@ namespace Uebung2
 			// Zugriff auf Array über (Array-)Property
             sl.Data[1] = "Some value";
             sl.Data[3] = "Another value";
+
             foreach (string s in sl.Data)
             {
                 Console.WriteLine("entry: " + s);
             }
+
             Console.WriteLine();
             
 			// Zugriff auf Array über Indexer
