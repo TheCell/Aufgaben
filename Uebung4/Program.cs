@@ -30,6 +30,12 @@ namespace Uebung4
 			del("myDelegate");
 
 			Delegate[] items = del.GetInvocationList();
+
+			for (int j = 0; j < items.Length; j++)
+			{
+				((myDelegate)items[j]).Invoke("Hello");
+			}
+
 			int i = 0;
 			foreach(myDelegate item in items)
 			{
