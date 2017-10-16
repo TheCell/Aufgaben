@@ -18,6 +18,12 @@ namespace Uebung3_GUI
 			
 			// nicht per Property als Methode gesetzt, deshalb per Code
 			buttonOk2.Click += ButtonOK2Click;
+			btnClear.Click += buttonClearClick;
+			numericUpDown1.ValueChanged += numericUpDownChange;
+
+			// std behaviour
+			textBox1.Text = numericUpDown1.Value.ToString();
+			checkboxCheckNegativeValue(numericUpDown1.Value);
 
 			// Auf Solution properties, Output Type Console damit
 			// console Fenster auch eingeblendet wird
@@ -40,6 +46,29 @@ namespace Uebung3_GUI
 				"Info",
 				MessageBoxButtons.OK,
 				MessageBoxIcon.Information);
+		}
+
+		private void buttonClearClick(object sender, EventArgs e)
+		{
+			numericUpDown1.Value = 0;
+		}
+
+		private void numericUpDownChange(object sender, EventArgs e)
+		{
+			textBox1.Text = Math.Abs(numericUpDown1.Value).ToString();
+			checkboxCheckNegativeValue(numericUpDown1.Value);
+		}
+
+		private void checkboxCheckNegativeValue(decimal number)
+		{
+			if (number < 0)
+			{
+				checkBox1.Checked = true;
+			}
+			else
+			{
+				checkBox1.Checked = false;
+			}
 		}
 	}
 }
